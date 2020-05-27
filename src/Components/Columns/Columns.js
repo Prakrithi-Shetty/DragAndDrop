@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { DragDropContext, Draggable, Droppable } from "react-beautiful-dnd";
-
+import CardDelete from "../Cards/CardDelete";
 import {itemsFromBackend,columnsFromBackend} from "../../Constants/Constants";
 
 
@@ -72,7 +72,7 @@ function Dnd() {
                         style={{
                           background: snapshot.isDraggingOver
                             ? "lightgrey"
-                            : "lightyellow",
+                            : "lightblue",
                           padding: 4,
                           width: 250,
                           minHeight: 500
@@ -103,7 +103,8 @@ function Dnd() {
                                       ...provided.draggableProps.style
                                     }}
                                   >
-                                    {item.content}
+                                   
+                                    <CardDelete id={item.id} content={item.content}/>
                                   </div>
                                 );
                               }}
@@ -120,6 +121,7 @@ function Dnd() {
           );
         })}
       </DragDropContext>
+     
     </div>
   );
 }
