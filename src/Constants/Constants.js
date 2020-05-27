@@ -10,19 +10,19 @@ export const itemsFromBackend = [
 
 
   export const columnsFromBackend = {
-    [uuid()]: {
+    ['todo']: {
       name: "To do",
       items: itemsFromBackend
     },
-    [uuid()]: {
+    ['doing']: {
       name: "Doing",
       items: []
     },
-    [uuid()]: {
+    ['done']: {
       name: "Done",
       items: []
     },
-    [uuid()]: {
+    ['rejected']: {
       name: "Rejected",
       items: []
     }
