@@ -4,6 +4,8 @@ import CardDelete from "../Cards/CardDelete";
 import {itemsFromBackend, columnsFromBackend} from "../../Constants/Constants";
 import CardAdd from "../Cards/CardAdd";
 import {uuid} from 'uuidv4';
+import tech from "../../Assets/tech.jpg";
+
 
 const onDragEnd = (result, columns, setColumns) => {
     if (!result.destination) 
@@ -56,32 +58,14 @@ function Dnd(props) {
         console.log("hi");
         console.log("columns", columns);
 
-        const newCol = columns;
-        newCol
+        let newCol = columns;
+        newCol.todo.items=newCol
             .todo
             .items
             .filter(function (item) {
                 return item.id != id
             });
-        newCol
-            .doing
-            .items
-            .filter(function (item) {
-                return item.id != id
-            });
-        newCol
-            .done
-            .items
-            .filter(function (item) {
-                return item.id != id
-            });
-        newCol
-            .rejected
-            .items
-            .filter(function (item) {
-                return item.id != id
-            });
-
+        
         setColumns({
             ...newCol
         });
@@ -105,7 +89,9 @@ function Dnd(props) {
 
     }
     return (
-        <div>
+        <div style={{
+            backgroundColor: "white",backgroundImage: 'url('+tech+')',
+        }}>
             <div
                 style={{
                 display: "flex",
@@ -143,7 +129,7 @@ function Dnd(props) {
                                                             : "lightblue",
                                                         padding: 4,
                                                         width: 250,
-                                                        minHeight: 500
+                                                        minHeight: 400
                                                     }}>
                                                         {column
                                                             .items
@@ -160,13 +146,14 @@ function Dnd(props) {
                                                                                     userSelect: "none",
                                                                                     padding: 16,
                                                                                     margin: "0 0 8px 0",
-                                                                                    minHeight: "50px",
+                                                                                    minHeight: "20px",
+                                                                                    
                                                                                     backgroundColor: snapshot.isDragging
                                                                                         ? "#263B4A"
                                                                                         : "#456C86",
                                                                                     color: "white",
                                                                                     ...provided.draggableProps.style
-                                                                                }}>
+                                                                                }     }>
 
                                                                                     <CardDelete id={item.id} content={item.content} onDelete={deleteCard}/>
                                                                                 </div>

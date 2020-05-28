@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Delete from "../../Assets/delete.png"
-
+import DeleteOutlineOutlinedIcon from '@material-ui/icons/DeleteOutlineOutlined';
 import "./Card.css";
 
 export default class CardDelete extends Component {
@@ -13,8 +13,8 @@ export default class CardDelete extends Component {
 
             <div className={"card"}>
                 <div>{content}</div>
-                <img src={Delete} className={"img"}  onClick={e=>onDelete(id) }/>
-
+                {/* <img src={Delete} className={"img"}  onClick={e=>onDelete(id) }/> */}
+                <DeleteOutlineOutlinedIcon className={"deleteicon"}  onClick={e=>onDelete(id) }/>
             </div>
 
         )
