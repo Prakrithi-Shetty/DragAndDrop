@@ -24,3 +24,8 @@ The dashboard design should have the following features
 
 
   * The tasks created can be moved (dragged and dropped) to any of the columns to change the status
+  ## 2. Make the status changes persistent
+
+* When a new task is created or the task changes its status by moving it to a different column, store the task and status in the [localstorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage) or any framework persistence functionality so that changes are persistent. 
+
+* You can also provide a delete option for the tasks if it needs to be removed from the localstorage
