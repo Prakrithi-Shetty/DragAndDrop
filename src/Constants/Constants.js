@@ -1,5 +1,7 @@
 import { uuid } from 'uuidv4';
 
+
+
 export const itemsFromBackend = [
     { id: uuid(), content: "First task" },
     { id: uuid(), content: "Second task" },
@@ -26,3 +28,6 @@ export const itemsFromBackend = [
       items: []
     }
   };
+
+  
+  localStorage.setItem("columnsFromBackend",JSON.stringify(columnsFromBackend));

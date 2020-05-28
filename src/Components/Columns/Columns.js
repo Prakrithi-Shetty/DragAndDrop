@@ -6,7 +6,6 @@ import CardAdd from "../Cards/CardAdd";
 import {uuid} from 'uuidv4';
 import tech from "../../Assets/tech.jpg";
 
-
 const onDragEnd = (result, columns, setColumns) => {
     if (!result.destination) 
         return;
@@ -52,20 +51,20 @@ function Dnd(props) {
     console.log(itemsFromBackend);
     console.log(columnsFromBackend);
 
-    const deleteCard = (id,columnName) => {
+    const deleteCard = (id, columnName) => {
 
         console.log(id);
         console.log("hi");
         console.log("columns", columns);
 
         let newCol = columns;
-        newCol[columnName].items=newCol
-            [columnName]
+        newCol[columnName].items = newCol
+        [columnName]
             .items
             .filter(function (item) {
                 return item.id != id
             });
-        
+
         setColumns({
             ...newCol
         });
@@ -89,8 +88,10 @@ function Dnd(props) {
 
     }
     return (
-        <div style={{
-            backgroundColor: "white",backgroundImage: 'url('+tech+')',
+        <div
+            style={{
+            backgroundColor: "white",
+            backgroundImage: 'url(' + tech + ')'
         }}>
             <div
                 style={{
@@ -147,15 +148,18 @@ function Dnd(props) {
                                                                                     padding: 16,
                                                                                     margin: "0 0 8px 0",
                                                                                     minHeight: "20px",
-                                                                                    
                                                                                     backgroundColor: snapshot.isDragging
                                                                                         ? "#263B4A"
                                                                                         : "#456C86",
                                                                                     color: "white",
                                                                                     ...provided.draggableProps.style
-                                                                                }     }>
+                                                                                }}>
 
-                                                                                    <CardDelete columnName={column.name} id={item.id} content={item.content} onDelete={deleteCard}/>
+                                                                                    <CardDelete
+                                                                                        columnName={column.name}
+                                                                                        id={item.id}
+                                                                                        content={item.content}
+                                                                                        onDelete={deleteCard}/>
                                                                                 </div>
                                                                             );
                                                                         }}

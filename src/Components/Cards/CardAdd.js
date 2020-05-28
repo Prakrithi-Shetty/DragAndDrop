@@ -39,12 +39,22 @@ const useStyles = makeStyles(theme => ({
 
 function CardAdd(props) {
 const [addValue, setaddValue] = useState();
-const [addValueNull, setAddValueNull] = useState()
+
 
     const classes = useStyles();
     // const id = this.props.id; const content = this.props.content;
     const onAdd = props.onAdd;
     console.log("hi",addValue);
+
+    let clearText=()=>{
+        setaddValue("");
+        console.log(addValue);
+    }
+
+    let perFormAdd=(perFormAdd)=>{
+        onAdd(addValue);
+       clearText() ;
+    }
     
     return (
 
@@ -53,6 +63,7 @@ const [addValueNull, setAddValueNull] = useState()
                 label="Add to To-do"
                 type="search"
                 variant="outlined"
+                value={addValue}
                 onChange={(e) => setaddValue(e.target.value)}
                 className={classes.box}
                 FormHelperTextProps={{
@@ -61,7 +72,7 @@ const [addValueNull, setAddValueNull] = useState()
                 }
             }}helperText=" Type here and click '+' icon to add the card "/>
             
-            <AddCircleOutlineOutlinedIcon  className={classes.icon} onClick={() => onAdd(addValue)}/>
+            <AddCircleOutlineOutlinedIcon  className={classes.icon} onClick={() => perFormAdd(addValue)}/>
 
         </div>
 
