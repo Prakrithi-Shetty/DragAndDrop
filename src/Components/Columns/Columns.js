@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {DragDropContext, Draggable, Droppable} from "react-beautiful-dnd";
 import CardDelete from "../Cards/CardDelete";
-import {itemsFromBackend, columnsFromBackend} from "../../Constants/Constants";
+import {itemsFromBackend} from "../../Constants/Constants";
 import CardAdd from "../Cards/CardAdd";
 import {uuid} from 'uuidv4';
 import tech from "../../Assets/tech.jpg";
@@ -46,6 +46,7 @@ const onDragEnd = (result, columns, setColumns) => {
 
 function Dnd(props) {
 
+    let columnsFromBackend=JSON.parse(localStorage.getItem("columnsFromBackend"));
     const [columns,
         setColumns] = useState(columnsFromBackend);
     console.log(itemsFromBackend);
@@ -67,7 +68,10 @@ function Dnd(props) {
 
         setColumns({
             ...newCol
+
         });
+          
+  localStorage.setItem("columnsFromBackend",JSON.stringify(newCol));
         console.log("old", columns);
         console.log("new", newCol);
 
@@ -83,6 +87,7 @@ function Dnd(props) {
         setColumns({
             ...newCol
         });
+        localStorage.setItem("columnsFromBackend",JSON.stringify(newCol));
         console.log("old", columns);
         console.log("new", newCol);
 
