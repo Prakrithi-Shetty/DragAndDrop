@@ -19,12 +19,8 @@ The dashboard design should have the following features
 
 * 4 columns (TODO, DOING, DONE and REJECTED) to represent the status of each task
 
-    ![status](./taskboard1.png)
    
 * A button to create a new task that pops up onclick. The created task should be moved to the first column by default.
 
-> NOTE: Multiple tasks can exist on the same column:
-  
-![column](./taskboard2.png)
 
-* The tasks created can be moved (dragged and dropped) to any of the columns to change the status
+  * The tasks created can be moved (dragged and dropped) to any of the columns to change the status
