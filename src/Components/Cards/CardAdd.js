@@ -3,7 +3,6 @@ import add from "../../Assets/add.jpg";
 import {TextField} from '@material-ui/core';
 import {makeStyles} from "@material-ui/core/styles";
 import AddCircleOutlineOutlinedIcon from '@material-ui/icons/AddCircleOutlineOutlined';
-
 import "./Card.css";
 
 const useStyles = makeStyles(theme => ({
@@ -11,55 +10,41 @@ const useStyles = makeStyles(theme => ({
         color: "brown",
         fontSize: 20,
         fontWeight: "1000",
-        fontFamily: ["Josefin Sans", "sans-serif"].join(","),
+        fontFamily: ["Josefin Sans", "sans-serif"].join(",")
     },
-    icon:{
-        color:"darkBlue ",
-        width:50,
-        fontSize:60,
-        paddingLeft:20,
+    icon: {
+        color: "darkBlue ",
+        width: 50,
+        fontSize: 60,
+        paddingLeft: 20,
         "&:hover": {
-            //you want this to be the same as the backgroundColor above
             color: "Orange"
         }
-
     },
 
-    add:{
-        marginTop:30,
-        display:"flex",
-        justifyContent:"center"
-       
-       
-        
+    add: {
+        marginTop: 30,
+        display: "flex",
+        justifyContent: "center"
     }
-    
+
 }));
 
-
-
 function CardAdd(props) {
-    
-const [addValue, setaddValue] = useState();
-
-
+    const [addValue,
+        setaddValue] = useState();
     const classes = useStyles();
-    // const id = this.props.id; const content = this.props.content;
     const onAdd = props.onAdd;
-    console.log("hi",addValue);
-
-    let clearText=()=>{
+    let clearText = () => {
         setaddValue("");
-        console.log(addValue);
     }
 
-    let perFormAdd=(perFormAdd)=>{
+    let perFormAdd = (perFormAdd) => {
         onAdd(addValue);
-       clearText() ;
+        clearText();
     }
-    
-    return (
 
+    return (
         <div className={classes.add}>
             <TextField
                 label="Add to To-do"
@@ -73,13 +58,11 @@ const [addValue, setaddValue] = useState();
                     root: classes.helperTextError
                 }
             }}helperText=" Type here and click '+' icon to add the card "/>
-            
-            <AddCircleOutlineOutlinedIcon  className={classes.icon} onClick={() => perFormAdd(addValue)}/>
-
+            <AddCircleOutlineOutlinedIcon
+                className={classes.icon}
+                onClick={() => perFormAdd(addValue)}/>
         </div>
-
     )
-
 }
 
 export default CardAdd;

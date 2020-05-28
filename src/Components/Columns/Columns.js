@@ -46,18 +46,10 @@ const onDragEnd = (result, columns, setColumns) => {
 
 function Dnd(props) {
 
-    let columnsFromBackend=JSON.parse(localStorage.getItem("columnsFromBackend"));
+    let columnsFromBackend = JSON.parse(localStorage.getItem("columnsFromBackend"));
     const [columns,
         setColumns] = useState(columnsFromBackend);
-    console.log(itemsFromBackend);
-    console.log(columnsFromBackend);
-
     const deleteCard = (id, columnName) => {
-
-        console.log(id);
-        console.log("hi");
-        console.log("columns", columns);
-
         let newCol = columns;
         newCol[columnName].items = newCol
         [columnName]
@@ -70,15 +62,12 @@ function Dnd(props) {
             ...newCol
 
         });
-          
-  localStorage.setItem("columnsFromBackend",JSON.stringify(newCol));
-        console.log("old", columns);
-        console.log("new", newCol);
+
+        localStorage.setItem("columnsFromBackend", JSON.stringify(newCol));
 
     }
 
     const onAdd = (content) => {
-        console.log("content", content);
         const newCol = columns;
         newCol
             .todo
@@ -87,9 +76,7 @@ function Dnd(props) {
         setColumns({
             ...newCol
         });
-        localStorage.setItem("columnsFromBackend",JSON.stringify(newCol));
-        console.log("old", columns);
-        console.log("new", newCol);
+        localStorage.setItem("columnsFromBackend", JSON.stringify(newCol));
 
     }
     return (
@@ -118,7 +105,11 @@ function Dnd(props) {
                                     alignItems: "center"
                                 }}
                                     key={columnId}>
-                                    <h2 style={{textTransform:"capitalize",color:"black"}}>{column.name}</h2>
+                                    <h2
+                                        style={{
+                                        textTransform: "capitalize",
+                                        color: "black"
+                                    }}>{column.name}</h2>
                                     <div
                                         style={{
                                         margin: 8
@@ -159,7 +150,6 @@ function Dnd(props) {
                                                                                     color: "white",
                                                                                     ...provided.draggableProps.style
                                                                                 }}>
-
                                                                                     <CardDelete
                                                                                         columnName={column.name}
                                                                                         id={item.id}

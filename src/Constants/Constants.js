@@ -1,35 +1,32 @@
-import { uuid } from 'uuidv4';
-
-
+import {uuid} from 'uuidv4';
 
 export const itemsFromBackend = [
-    { id: uuid(), content: "First task" },
-    
-  
-    
-  ];
+    {
+        id: uuid(),
+        content: "First task"
+    }
+];
 
-
-  export const columnsFromBackend = {
+export const columnsFromBackend = {
     ['todo']: {
-      name: "todo",
-      items: itemsFromBackend
+        name: "todo",
+        items: itemsFromBackend
     },
     ['doing']: {
-      name: "doing",
-      items: []
+        name: "doing",
+        items: []
     },
     ['done']: {
-      name: "done",
-      items: []
+        name: "done",
+        items: []
     },
     ['rejected']: {
-      name: "rejected",
-      items: []
+        name: "rejected",
+        items: []
     }
-  };
+};
 
-  if (localStorage.getItem("columnsFromBackend") === null) {
+if (localStorage.getItem("columnsFromBackend") === null) {
     debugger;
-  localStorage.setItem("columnsFromBackend",JSON.stringify(columnsFromBackend));
-  }
+    localStorage.setItem("columnsFromBackend", JSON.stringify(columnsFromBackend));
+}

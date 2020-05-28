@@ -1,34 +1,21 @@
-.card{
-
-    display :flex;
+.card {
+    display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.deleteicon{
-    width:25px;
-    color:black;
+.deleteicon {
+    width: 25px;
+    color: black;
 }
 
-.icon{
-    color:red;
-    width:50px;
+.icon {
+    color: red;
+    width: 50px;
     font-size: 50px;
-    padding-left:20px;
-
+    padding-left: 20px;
 }
-
-
-
-
-.deleteicon:hover{
-
-    color:red;
-    font-size:35px ;
-    
+.deleteicon:hover {
+    color: red;
+    font-size: 35px;
 }
-
-
-
-
-
