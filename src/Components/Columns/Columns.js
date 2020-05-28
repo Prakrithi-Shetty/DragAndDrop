@@ -52,15 +52,15 @@ function Dnd(props) {
     console.log(itemsFromBackend);
     console.log(columnsFromBackend);
 
-    const deleteCard = (id) => {
+    const deleteCard = (id,columnName) => {
 
         console.log(id);
         console.log("hi");
         console.log("columns", columns);
 
         let newCol = columns;
-        newCol.todo.items=newCol
-            .todo
+        newCol[columnName].items=newCol
+            [columnName]
             .items
             .filter(function (item) {
                 return item.id != id
@@ -155,7 +155,7 @@ function Dnd(props) {
                                                                                     ...provided.draggableProps.style
                                                                                 }     }>
 
-                                                                                    <CardDelete id={item.id} content={item.content} onDelete={deleteCard}/>
+                                                                                    <CardDelete columnName={column.name} id={item.id} content={item.content} onDelete={deleteCard}/>
                                                                                 </div>
                                                                             );
                                                                         }}

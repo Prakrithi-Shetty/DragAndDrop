@@ -10,19 +10,19 @@ export const itemsFromBackend = [
 
   export const columnsFromBackend = {
     ['todo']: {
-      name: "To do",
+      name: "todo",
       items: itemsFromBackend
     },
     ['doing']: {
-      name: "Doing",
+      name: "doing",
       items: []
     },
     ['done']: {
-      name: "Done",
+      name: "done",
       items: []
     },
     ['rejected']: {
-      name: "Rejected",
+      name: "rejected",
       items: []
     }
   };

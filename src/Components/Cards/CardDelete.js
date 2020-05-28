@@ -9,12 +9,13 @@ export default class CardDelete extends Component {
         const id = this.props.id;
         const content = this.props.content;
         const onDelete=this.props.onDelete;
+        const columnName=this.props.columnName;
         return (
 
             <div className={"card"}>
                 <div>{content}</div>
                 {/* <img src={Delete} className={"img"}  onClick={e=>onDelete(id) }/> */}
-                <DeleteOutlineOutlinedIcon className={"deleteicon"}  onClick={e=>onDelete(id) }/>
+                <DeleteOutlineOutlinedIcon className={"deleteicon"}  onClick={e=>onDelete(id,columnName) }/>
             </div>
 
         )
