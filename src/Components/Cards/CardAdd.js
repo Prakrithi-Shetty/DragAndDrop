@@ -8,9 +8,10 @@ import "./Card.css";
 
 const useStyles = makeStyles(theme => ({
     helperTextError: {
-        color: "darkGreen",
-        fontSize: 14,
-        fontWeight: "800"
+        color: "brown",
+        fontSize: 20,
+        fontWeight: "1000",
+        fontFamily: ["Josefin Sans", "sans-serif"].join(","),
     },
     icon:{
         color:"darkBlue ",

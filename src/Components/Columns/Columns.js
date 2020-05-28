@@ -118,7 +118,7 @@ function Dnd(props) {
                                     alignItems: "center"
                                 }}
                                     key={columnId}>
-                                    <h2>{column.name}</h2>
+                                    <h2 style={{textTransform:"capitalize",color:"black"}}>{column.name}</h2>
                                     <div
                                         style={{
                                         margin: 8
